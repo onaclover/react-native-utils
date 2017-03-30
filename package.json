@@ -6,10 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/ethan605/react-native-utils.git"
-  },
+  "repository": "git+ssh://git@github.com/ethan605/react-native-utils.git",
   "keywords": [
     "react-native",
     "utils",
@@ -20,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/ethan605/react-native-utils/issues"
   },
-  "homepage": "https://github.com/ethan605/react-native-utils#readme"
+  "homepage": "https://github.com/ethan605/react-native-utils#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.4.2",
+    "react-native": "^0.42.3",
+    "react-native-device-info": "^0.10.1",
+    "singleton": "^1.0.0"
+  }
 }
