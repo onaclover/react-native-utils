@@ -15,7 +15,7 @@ class SearchUtils extends Singleton {
   }
 
   buildSanitizedDict() {
-    const vietnameseChars = require('app/data/configs/vietnamese_chars.json');
+    const vietnameseChars = require('../data/vietnamese_chars.json');
 
     const sections = _.map(vietnameseChars, (ascii, unicode) => {
       const unicodeChars = unicode.split('');

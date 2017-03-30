@@ -1,24 +1,11 @@
 /**
- * @providesModule RNRFToolBox.Index
+ * @providesModule RNUtils.Index
  */
 
-import animationStyle from './src/Router/animationStyle';
-import getPanHandlers, { platformBasedPanHandlers } from './src/Router/getPanHandlers';
-import {
-  renderBackButton,
-  renderLeftButton,
-  renderRightButton,
-} from './src/Router/renderNavButton';
-import renderTitle from './src/Router/renderTitle';
-import PopUp from './src/PopUp';
+import DeviceUtils from './src/DeviceUtils';
+import FontUtils from './src/FontUtils';
+import Logger from './src/Logger';
+import SearchUtils from './src/SearchUtils';
+import ValidationUtils from './src/ValidationUtils';
 
-export {
-  animationStyle,
-  getPanHandlers,
-  platformBasedPanHandlers,
-  renderBackButton,
-  renderLeftButton,
-  renderRightButton,
-  renderTitle,
-  PopUp,
-};
+export { DeviceUtils, FontUtils, Logger, SearchUtils, ValidationUtils };
