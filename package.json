@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "git+ssh://git@github.com/ethan605/react-native-utils.git",
+  "repository": "git+ssh://git@github.com/onaclover/react-native-utils.git",
   "keywords": [
     "react-native",
     "utils",
