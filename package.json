@@ -15,9 +15,9 @@
   "author": "Ethan N.",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ethan605/react-native-utils/issues"
+    "url": "https://github.com/onaclover/react-native-utils/issues"
   },
-  "homepage": "https://github.com/ethan605/react-native-utils#readme",
+  "homepage": "https://github.com/onaclover/react-native-utils#readme",
   "dependencies": {
     "babel-eslint": "^7.2.1",
     "eslint": "^3.18.0",
