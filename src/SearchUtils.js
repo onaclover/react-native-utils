@@ -15,15 +15,13 @@ class SearchUtils extends Singleton {
   }
 
   buildSanitizedDict() {
-    const vietnameseChars = require('../data/vietnamese_chars.json');
+    const vietnameseChars = require('./data/vietnamese_chars.json');
 
-    const sections = _.map(vietnameseChars, (ascii, unicode) => {
+    return _.map(vietnameseChars, (ascii, unicode) => {
       const unicodeChars = unicode.split('');
       const asciiChars = _.fill(Array(unicode.length), ascii);
       return _.zipObject(unicodeChars, asciiChars);
     });
-
-    return Object.assign({}, ...sections);
   }
 
   buildSearchPattern(keyword: string, trunkLength: number): RegExp {

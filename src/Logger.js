@@ -39,7 +39,7 @@ class Logger extends Singleton {
     const components = callee.split(' ');
     return components.length > 1 ? components[0] : '';
   };
-};
+}
 
 export default Logger.get();
 
