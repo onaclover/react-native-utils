@@ -18,7 +18,7 @@
     "url": "https://github.com/onaclover/react-native-utils/issues"
   },
   "homepage": "https://github.com/onaclover/react-native-utils#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-eslint": "^7.2.1",
     "eslint": "^3.18.0",
     "eslint-plugin-import": "^2.2.0",
