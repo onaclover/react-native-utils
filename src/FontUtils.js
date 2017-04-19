@@ -42,10 +42,6 @@ function transformFontConfigs({ family, style, weight }) {
 }
 
 class FontUtils extends Singleton {
-  colors = {
-    wefitTheme: '#292941',
-  };
-
   build({
     align = 'left',
     background = 'transparent',
