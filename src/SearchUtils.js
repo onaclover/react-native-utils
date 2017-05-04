@@ -1,6 +1,5 @@
 /**
  * @providesModule RNUtils.SearchUtils
- * @flow
  */
 
 import Singleton from 'singleton';
@@ -11,20 +10,16 @@ const KEYWORD_TRUNK_LENGTH = 3;
 class SearchUtils extends Singleton {
   constructor() {
     super();
-    this.sanitizedDict = this.buildSanitizedDict();
+    this.buildSanitizedDict();
   }
 
   buildSanitizedDict() {
     const vietnameseChars = require('./data/vietnamese_chars.json');
-
-    return _.map(vietnameseChars, (ascii, unicode) => {
-      const unicodeChars = unicode.split('');
-      const asciiChars = _.fill(Array(unicode.length), ascii);
-      return _.zipObject(unicodeChars, asciiChars);
-    });
+    const splited = _.map(vietnameseChars, (unicode, ascii) => ({ [ascii]: unicode.split('') }));
+    this.sanitizedDict = Object.assign(...splited);
   }
 
-  buildSearchPattern(keyword: string, trunkLength: number): RegExp {
+  buildSearchPattern(keyword, trunkLength) {
     const sanitized = this.sanitize(keyword);
     const trunks = this.breakKeywordToTrunks(sanitized, trunkLength);
     
@@ -33,30 +28,32 @@ class SearchUtils extends Singleton {
       : RegExp(`(${trunks.join('|')})`);
   }
 
-  breakKeywordToTrunks(keyword: string, trunkLength = KEYWORD_TRUNK_LENGTH): Array<string> {
+  breakKeywordToTrunks(keyword, trunkLength = KEYWORD_TRUNK_LENGTH) {
     if (keyword == null || keyword === '' || typeof(keyword) !== 'string')
       return [''];
 
     const stripped = keyword.replace(/[^a-z0-9]/g, '');
     if (stripped.length < trunkLength) return [stripped];
 
-    return _.range(stripped.length - trunkLength + 1).map(start =>
+    return _.range(stripped.length - trunkLength + 1).map(start => (
       stripped.slice(start, start + trunkLength)
-    );
+    ));
   }
 
-  sanitize(text: string, removePunctuations: boolean = true) {
-    if (text == null || text === '' || typeof(text) !== 'string')
-      return '';
+  sanitize(text, removePunctuations = true) {
+    if (_.isEmpty(text) || typeof(text) !== 'string') return '';
 
-    const asciiText = text.toLowerCase()
-      .split('')
-      .map(origin => this.sanitizedDict[origin] || origin)
+    const asciiText = text.split('')
+      .map(this.convertUnicodeToAscii)
       .join('');
 
     if (!removePunctuations) return asciiText;
     return asciiText.replace(/[^a-z0-9\s]/g, '').replace(/\s{2,}/g, ' ');
   }
+
+  convertUnicodeToAscii = unicode => (
+    _.findKey(this.sanitizedDict, unicodes => unicodes.indexOf(unicode) >= 0) || unicode
+  );
 }
 
 export default SearchUtils.get();
