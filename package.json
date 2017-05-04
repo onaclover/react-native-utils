@@ -1,6 +1,6 @@
 {
   "name": "@onaclover/react-native-utils",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Utilities for React Native",
   "main": "index.js",
   "scripts": {
