@@ -43,7 +43,8 @@ class SearchUtils extends Singleton {
   sanitize(text, removePunctuations = true) {
     if (_.isEmpty(text) || typeof(text) !== 'string') return '';
 
-    const asciiText = text.split('')
+    const asciiText = text.toLowerCase()
+      .split('')
       .map(this.convertUnicodeToAscii)
       .join('');
 
