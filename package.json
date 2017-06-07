@@ -19,17 +19,19 @@
   },
   "homepage": "https://github.com/onaclover/react-native-utils#readme",
   "peerDependencies": {
-    "lodash": "^4.17.4",
     "react": "16.0.0-alpha.6",
-    "react-native": "^0.44.2",
-    "react-native-device-info": "^0.10.1",
-    "singleton": "^1.0.0"
+    "react-native": "^0.44.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
     "eslint": "^3.18.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-react": "^6.10.3",
+    "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-react-native": "^2.3.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react-native-device-info": "^0.10.1",
+    "singleton": "^1.0.0"
   }
 }
