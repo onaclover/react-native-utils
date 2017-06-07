@@ -57,8 +57,8 @@ class FontUtils extends Singleton {
       backgroundColor: background,
       fontSize: size,
       textAlign: align,
-      ...extraProps,
       ...transformFontConfigs({ family, style, weight }),
+      ...extraProps,
     };
   }
 }
